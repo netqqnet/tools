@@ -1,6 +1,8 @@
 import cv2,os
 import numpy as np
-
+'''
+视频转图片
+'''
 def rotate_bound(image, angle):
     # 获取图像的尺寸
     # 旋转中心

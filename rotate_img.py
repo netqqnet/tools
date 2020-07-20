@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 import os
-
+# 图片旋转
 
 def rotate_bound(image, angle):
     # 获取图像的尺寸
