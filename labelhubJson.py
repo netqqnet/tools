@@ -1,4 +1,4 @@
-import requests
+#import requests
 import json
 import os
 import sys
@@ -9,14 +9,9 @@ labelHub网站的数据格式 如果没有质检则没有数据
 CLASSES = 6
 
 def tagNameToId(name):
-    # 给各类型编号
-    name_list = [
-        '饮料瓶', '酸奶牛奶盒', '易拉罐', '烟盒', '烟蒂', '玻璃', '塑料', '花草树枝树叶', '纸巾纸片',
-        '口罩', '污水污渍', '泥土石块', '果皮', '打包垃圾', '堆放垃圾', '垃圾桶', '其它'
-    ]
-    # res_id = name_list.index(name)
+
     # 大致统计分类
-    name_list = [
+    name_list_s = [
         '打包垃圾', '堆放垃圾', '垃圾桶', '果皮', '烟蒂', '其他'
     ]
     if name in name_list:
@@ -58,13 +53,16 @@ def savePicText(pic_name, pic_path, tag_info):
             fp.write(' '.join([str(n) for n in i]))
             fp.write('\n')
 
-def labelHubToYolo():
+def labelHubToYolo(json_file_path):
     # 遍历文件夹 获取json文件
-    json_file_path = '../../media/image/labelHub/'
+    
     json_file_list = []
+    filecount = 0
     for root, basename, files in os.walk(json_file_path):
         for file in files:
             file_path = os.path.join(root, file)
+            if not file.endswith('.json'):
+                continue
             json_file_list.append(file_path)
     for i in json_file_list:
         # 读取json文件
@@ -72,34 +70,30 @@ def labelHubToYolo():
             obj_json = json.load(fp)
         # 读取json中的文件名称
         # json中的格式是 根路径[ {图片信息：}, {图片信息：}....]
-        # 图片信息： {Data: {svgArr: [多目标标注信息]}, imagePath, imageWidth, imageHeight, imageName}
-        # 标注信息： {data: [左上 右上 右下 左下标注点的{x, y}], name, }
-        total_1 = len(obj_json)
-        n = 0
         for i in obj_json:
-            # 图片的网络地址
-            image_path = i['imagePath']
-            # 图片名称 宽度 高度
-            image_name = i['imageName']
-            image_width = i['imageWidth']
-            image_height = i['imageHeight']
-            pic_size = [image_width, image_height]
+            filecount += 1
             if len(i['Data']) == 0:
-                continue
-            image_tag = i['Data']['svgArr']
-            tag_info = []
+                continue 
+            image_tag = i['Data']['svgArr']           
             for j in image_tag:
                 tag_name = j['name']
-                tag_id = tagNameToId(tag_name)
-                # 将坐标转为左上和右下坐标
-                if len(j['data']) != 4:
-                    continue
-                box = [j['data'][0]['x'], j['data'][2]['x'], j['data'][0]['y'], j['data'][2]['y']]
-                x, y, w, h = convert(pic_size, box)
-                tag_info.append([tag_id, x, y, w, h])
+                if tag_name == '泥土':
+                    tag_name = '泥土石块'
+                tag_stat[name_list.index(tag_name)]+=1
+    tag_stat_info=[]
+    for each in range(len(tag_stat)):
+        print("%s \t %d" % (name_list[each],tag_stat[each]))
+    
 
-            savePicText(image_name, image_path, tag_info)
-            n += 1
+
+
 
 if __name__ == '__main__':
-    labelHubToYolo()
+    json_file_path = './data/labelhub'
+    # 给各类型编号v
+    name_list = [
+        '饮料瓶', '酸奶牛奶盒', '易拉罐', '烟盒', '烟蒂', '玻璃', '塑料', '花草树枝树叶', '纸巾纸片',
+        '口罩', '污水污渍', '泥土石块', '果皮', '打包垃圾', '堆放垃圾', '垃圾桶', '其它'
+    ]
+    tag_stat = [0 for i in range(len(name_list))]    
+    labelHubToYolo(json_file_path)
