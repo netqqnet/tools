@@ -5,12 +5,9 @@ import hashlib
 import shutil
 
 """
-1.以md5方式重命名指定目录；
+1.以md5指纹方式重命名指定目录；
 2.把获取到指纹写入txt文件；
 3.查询并去除重复文件
-
-推荐业务处理流程：
-1.
 
 """
 #某文件
@@ -63,7 +60,7 @@ class FingerprintLib(object):
     # 添加指纹库 输入list
     def add(self,l):
         filename = time.strftime('%Y%m%d%H%M', time.localtime(time.time()))
-        suffix = '.txt'
+        suffix = '.tmp'
         full_filename = os.path.join(self.__fingerprint_lib_dir,filename+suffix)
         if not os.path.exists(full_filename):
             with open(os.path.join(full_filename),'w',encoding='utf-8') as f:
@@ -107,15 +104,22 @@ def conversion(src_dir,fingerprint_lib_dir):
                 one.rename()
                 tmp_fingerprint_list.append(fingerprint)
     lib.add(tmp_fingerprint_list)
-    print('总文件数：%d',total_num)
-    print('重复文件数:%d',del_num)
-    print('重复率：%.2f',del_num/total_num)
+    print('总文件数：%d'%total_num)
+    print('重复文件数:%d'%del_num)
+    print('重复率：%.2f' % float(del_num/total_num))
+
+
+def dir_counts(path):
+    for item in os.listdir(path):
+        if not item.startswith('.'):
+            print(item+":"+str(len(os.listdir(os.path.join(path, item)))))
 
                 
 if __name__ == '__main__':
     
-    src_dir = '/Users/linqing/Downloads/环卫数据/第二批次/2020年08月11日的副本'
+    src_dir = '/Users/linqing/Pictures/pan.baidu'
     fingerprint_lib_dir = '/Users/linqing/Downloads/环卫数据/fingerprint-lib/'    
     conversion(src_dir,fingerprint_lib_dir)
+    # dir_counts(src_dir)
 
     

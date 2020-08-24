@@ -1,6 +1,9 @@
 import os
 import shutil
 
+''' 
+文件整理-文件的合并与按指定数量存放
+''' 
 # 对目标路径下所有的文件合并，并且按照step大小分别存放
 def dirsplit(path,step = 3000):
     if not os.path.exists(path):
@@ -11,7 +14,7 @@ def dirsplit(path,step = 3000):
     filesCount = 0  
     for root,dirs,files in os.walk(path):
         for f in files:
-            if  f.endswith('.DS_Store'):
+            if f.endswith('.DS_Store'):
                 continue
             (shotname, extension) = os.path.splitext(f)
             old_path = os.path.join(root, f) 
