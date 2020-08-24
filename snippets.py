@@ -12,6 +12,28 @@ Update:2020年08月24日
 a = '1,2,3,4'
 [float(i) for i in a.split(',')]
 
+# Operating system flag
+# Note: Somes libs depends of OS
+is_bsd = sys.platform.find('bsd') != -1
+is_linux = sys.platform.startswith('linux')
+is_mac = sys.platform.startswith('darwin')
+is_windows = sys.platform.startswith('win')
+
+
+
+class ObjectDict(dict):
+    """Makes a dictionary behave like an object."""
+    def __getattr__(self, name):
+        try:
+            return self[name]
+        except KeyError:
+            raise AttributeError(name)
+
+    def __setattr__(self, name, value):
+        self[name] = value
+# d = {'a':1,'b':2}
+# o  = ObjectDict(d)
+
 
 class Workstatus(Enum):
     ''' 
@@ -23,7 +45,7 @@ class Workstatus(Enum):
 
 
 
-def file_2_lst(file_path):
+def file_2_lst(file_path,separator = ':'):
     ''' 
     # 按行读取文件，返回list
     '''    
@@ -32,7 +54,11 @@ def file_2_lst(file_path):
         for line in f.readlines():
             if line == '\n':
                 continue
-            l.append(line.split(':'))
+            if separator is not None:   
+                _l = line.split(separator)
+            else:
+                _l = line            
+            l.append(_l)
     return l
 
 
