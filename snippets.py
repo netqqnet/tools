@@ -9,15 +9,15 @@ Author: Ericlin
 Update:2020年08月24日
 ''' 
 
-a = '1,2,3,4'
-[float(i) for i in a.split(',')]
+# a = '1,2,3,4'
+# [float(i) for i in a.split(',')]
 
-# Operating system flag
-# Note: Somes libs depends of OS
-is_bsd = sys.platform.find('bsd') != -1
-is_linux = sys.platform.startswith('linux')
-is_mac = sys.platform.startswith('darwin')
-is_windows = sys.platform.startswith('win')
+# # Operating system flag
+# # Note: Somes libs depends of OS
+# is_bsd = sys.platform.find('bsd') != -1
+# is_linux = sys.platform.startswith('linux')
+# is_mac = sys.platform.startswith('darwin')
+# is_windows = sys.platform.startswith('win')
 
 
 

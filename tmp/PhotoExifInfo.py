@@ -7,22 +7,14 @@ class PhotoExifInfo():
 
     def get_tags(self):
         """获取照片信息"""
-        image_content = open(self.photo_path, 'rb')
-        tags = exifread.process_file(image_content)
-        """
-        # 遍历获取照片所有信息
-        for j, k in tags.items():
-            print(j, k)
-        """
-
-
+        img = open(self.photo_path, 'rb')
+        tags = exifread.process_file(img)
         #打印照片其中一些信息
         print('拍摄时间：', tags['EXIF DateTimeOriginal'])
         print('照相机制造商：', tags['Image Make'])
         print('照相机型号：', tags['Image Model'])
         print('照片尺寸：', tags['EXIF ExifImageWidth'], tags['EXIF ExifImageLength'])
-
-        image_content.close()
+        img.close()
         return tags
 
     def get_lng_lat(self):

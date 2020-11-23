@@ -117,9 +117,9 @@ def dir_counts(path):
                 
 if __name__ == '__main__':
     
-    src_dir = '/Users/linqing/Pictures/pan.baidu'
+    src_dir = '/Users/linqing/Downloads/环卫数据/2019'
     fingerprint_lib_dir = '/Users/linqing/Downloads/环卫数据/fingerprint-lib/'    
     conversion(src_dir,fingerprint_lib_dir)
-    # dir_counts(src_dir)
+    dir_counts(src_dir)
 
     
