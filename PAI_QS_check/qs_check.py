@@ -12,7 +12,7 @@ Update: 2020年11月25日
 '''
 
 
-manifest_file = '固定点位摊位识别_1606448285460.manifest'
+manifest_file = 'PAI_QS_check/固定点位摊位识别_1606448285460.manifest'
 #本地图片文件存放地址
 local_file_sets = '/Users/linqing/Downloads/环卫数据/fixed-point_20201123'
 sample_len = 100 #每次取样数量
@@ -34,6 +34,7 @@ def main():
         cv2.imwrite(img_basename,image)
         print(img_basename +' 生成成功!')
 
+
 # 已经抽查的list
 def checked_lib():
     lib = []
@@ -42,8 +43,7 @@ def checked_lib():
             if  filename.startswith('.'):
                 continue
             lib.append(filename)
-    return lib    
-
+    return lib
 
 # 随机抽取
 def random_get(sample_len):
@@ -62,7 +62,6 @@ def random_get(sample_len):
     random.shuffle(l)
     print('随机取样成功')
     return l[:sample_len]
-
 
 # 合成图片
 def generate_img(image,labels):
