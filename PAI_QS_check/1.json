@@ -1,0 +1,44 @@
+{
+    "data": {
+        "picUrl": "oss://bv-datasets-garbage.oss-cn-shanghai-internal.aliyuncs.com/fixed-point_20201123/004845cc73f362ac01339b3c08dde8d4.jpg"
+    },
+    "label-ernztmy3piuz12nzei": {
+        "results": [
+            {
+                "data": [
+                    {
+                        "id": "Oio4frbDAPiA_77ZRMytq",
+                        "type": "image/rectangleLabel",
+                        "value": {
+                            "x": 271.6805871238053,
+                            "width": 353.2075471698113,
+                            "y": 778.8679245283017,
+                            "height": 353.2075471698113
+                        },
+                        "labelColor": "#00aa90",
+                        "labels": [
+                            "电三轮"
+                        ]
+                    },
+                    {
+                        "id": "g3dZlXob7Bi6RBWdDDz24",
+                        "type": "image/rectangleLabel",
+                        "value": {
+                            "rotation": 0,
+                            "x": 697.3584905660376,
+                            "width": 316.98113207547163,
+                            "y": 929.8113207547168,
+                            "height": 283.77358490566036
+                        },
+                        "labelColor": "#72bf7d",
+                        "labels": [
+                            "人力两三轮"
+                        ]
+                    }
+                ],
+                "id": "1790666",
+                "type": "image"
+            }
+        ]
+    }
+}
