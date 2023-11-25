@@ -1,0 +1,205 @@
+{
+    "code": 0,
+    "data": {
+        "status": [
+            {
+                "object_token": "obcn1v5k6xrbqdu562rwpzh7",
+                "object_status": 2,
+                "topic": "浦东现在产业园0719-2",
+                "duration": 2691750,
+                "transcript_progress": {
+                    "current": "",
+                    "rate": ""
+                },
+                "expire_time": -1,
+                "in_trash": false
+            },
+            {
+                "object_token": "obcn1v8zb1zrsh43c3m3o121",
+                "object_status": 2,
+                "topic": "宝山机器人产业园-保安",
+                "duration": 1684250,
+                "transcript_progress": {
+                    "current": "",
+                    "rate": ""
+                },
+                "expire_time": -1,
+                "in_trash": false
+            },
+            {
+                "object_token": "obcn1vu9h4zj8r8s81f75n54",
+                "object_status": 2,
+                "topic": "浦东现在产业园0719-张经理营销一部",
+                "duration": 2811280,
+                "transcript_progress": {
+                    "current": "",
+                    "rate": ""
+                },
+                "expire_time": -1,
+                "in_trash": false
+            },
+            {
+                "object_token": "obcn1vii748s9y12h2p45e25",
+                "object_status": 2,
+                "topic": "宝山机器人产业园-保集售楼处",
+                "duration": 1235000,
+                "transcript_progress": {
+                    "current": "",
+                    "rate": ""
+                },
+                "expire_time": -1,
+                "in_trash": false
+            },
+            {
+                "object_token": "obcn1vxh2oxuk84s4s767ifl",
+                "object_status": 2,
+                "topic": "漕河泾0709董-1",
+                "duration": 1079310,
+                "transcript_progress": {
+                    "current": "",
+                    "rate": ""
+                },
+                "expire_time": -1,
+                "in_trash": false
+            },
+            {
+                "object_token": "obcn1vhg7z2w134payvo94o4",
+                "object_status": 2,
+                "topic": "漕河泾0709董-2",
+                "duration": 5004300,
+                "transcript_progress": {
+                    "current": "",
+                    "rate": ""
+                },
+                "expire_time": -1,
+                "in_trash": false
+            },
+            {
+                "object_token": "obcn1vywudv7v9x4g9coyed4",
+                "object_status": 2,
+                "topic": "浦东现在产业园0719-4",
+                "duration": 1761100,
+                "transcript_progress": {
+                    "current": "",
+                    "rate": ""
+                },
+                "expire_time": -1,
+                "in_trash": false
+            },
+            {
+                "object_token": "obcn1vo5g58eh52a7jjetp19",
+                "object_status": 2,
+                "topic": "浦东现在产业园0719-陆勤",
+                "duration": 325590,
+                "transcript_progress": {
+                    "current": "",
+                    "rate": ""
+                },
+                "expire_time": -1,
+                "in_trash": false
+            },
+            {
+                "object_token": "obcn1vs19x23b8u7f39s3v5j",
+                "object_status": 2,
+                "topic": "浦东现在产业园0719-陆琴介绍",
+                "duration": 181870,
+                "transcript_progress": {
+                    "current": "",
+                    "rate": ""
+                },
+                "expire_time": -1,
+                "in_trash": false
+            },
+            {
+                "object_token": "obcn1vbdw385t3ewe42a117s",
+                "object_status": 2,
+                "topic": "浦东现在产业园0719-规建部杨",
+                "duration": 1184890,
+                "transcript_progress": {
+                    "current": "",
+                    "rate": ""
+                },
+                "expire_time": -1,
+                "in_trash": false
+            },
+            {
+                "object_token": "obcnmj5k93p414wkne65687r",
+                "object_status": 2,
+                "topic": "翼智慧沙龙数字孪生主题",
+                "duration": 6526152,
+                "transcript_progress": {
+                    "current": "",
+                    "rate": ""
+                },
+                "expire_time": -1,
+                "in_trash": false
+            },
+            {
+                "object_token": "obcncz2t6y51159f8b724c45",
+                "object_status": 2,
+                "topic": "松卫北路企福敬小军",
+                "duration": 3310200,
+                "transcript_progress": {
+                    "current": "",
+                    "rate": ""
+                },
+                "expire_time": -1,
+                "in_trash": false
+            },
+            {
+                "object_token": "obcn1vlzxo9cbk3fn5tot37s",
+                "object_status": 2,
+                "topic": "浦东现在产业园0719-3",
+                "duration": 1761100,
+                "transcript_progress": {
+                    "current": "",
+                    "rate": ""
+                },
+                "expire_time": -1,
+                "in_trash": false
+            },
+            {
+                "object_token": "obcnlf9z7kw1fw64ak14246f",
+                "object_status": 2,
+                "topic": "青浦工业园吴部长",
+                "duration": 4293310,
+                "transcript_progress": {
+                    "current": "",
+                    "rate": ""
+                },
+                "expire_time": -1,
+                "in_trash": false
+            },
+            {
+                "object_token": "obcn1v3rnkmtc46h8c11f845",
+                "object_status": 2,
+                "topic": "浦东现在产业园0719-1",
+                "duration": 3197870,
+                "transcript_progress": {
+                    "current": "",
+                    "rate": ""
+                },
+                "expire_time": -1,
+                "in_trash": false
+            },
+            {
+                "object_token": "obcnpa6pg971n74y5g1w3129",
+                "object_status": 2,
+                "topic": "青浦工业园综合办张主任",
+                "duration": 1989780,
+                "transcript_progress": {
+                    "current": "",
+                    "rate": ""
+                },
+                "expire_time": -1,
+                "in_trash": false
+            }
+        ],
+        "ws_config": {
+            "ws_enable": false,
+            "heartbeat_interval": 20,
+            "http_interval": 60
+        }
+    },
+    "msg": "success"
+}

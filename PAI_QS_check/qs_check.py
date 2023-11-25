@@ -12,7 +12,7 @@ Update: 2020年11月25日
 '''
 
 
-manifest_file = 'PAI_QS_check/固定点位摊位识别_1606448285460.manifest'
+manifest_file = 'PAI_QS_check/固定点位摊位识别_1607655301732.manifest'
 #本地图片文件存放地址
 local_file_sets = '/Users/linqing/Downloads/环卫数据/fixed-point_20201123'
 sample_len = 100 #每次取样数量
@@ -33,7 +33,34 @@ def main():
         os.chdir(save_dir)
         cv2.imwrite(img_basename,image)
         print(img_basename +' 生成成功!')
+# d = {'1':1,'2':2}
+# dd = ObjectDict(d)
+# class ObjectDict(dict):
+#     """Makes a dictionary behave like an object."""
+#     def __getattr__(self, name):
+#         try:
+#             return self[name]
+#         except KeyError:
+#             raise AttributeError(name)
 
+#     def __setattr__(self, name, value):
+#         self[name] = value
+
+# 统计标签平均数
+def labelperimg():
+    label_num = 0
+    img_num = 0
+    with open(manifest_file,'r',encoding='UTF-8') as f:
+        for line in f.readlines():
+            obj = json.loads(line)
+            if label_id  in obj:
+                lables = obj[label_id]['results'][0]['data']
+                img_num = img_num + 1           
+                for item in lables:
+                    # if not item['labels'] == '不用标':
+                    label_num = label_num+1
+    n = label_num/img_num
+    print(n)
 
 # 已经抽查的list
 def checked_lib():
@@ -104,4 +131,5 @@ def put_hanzi_text(img_cv,text,color,pos):
 
 
 if __name__ == "__main__":
-    main()
+   main()
+   #labelperimg()

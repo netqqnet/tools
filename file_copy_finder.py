@@ -73,7 +73,7 @@ class FingerprintLib(object):
 
 
 # 
-def conversion(src_dir,fingerprint_lib_dir):
+def main(src_dir,fingerprint_lib_dir):
     trash_path = src_dir+'_trash' #重复文件暂存
     if not os.path.exists(trash_path):
         os.mkdir(trash_path)
@@ -119,7 +119,6 @@ if __name__ == '__main__':
     
     src_dir = '/Users/linqing/Downloads/环卫数据/2019'
     fingerprint_lib_dir = '/Users/linqing/Downloads/环卫数据/fingerprint-lib/'    
-    conversion(src_dir,fingerprint_lib_dir)
+    main(src_dir,fingerprint_lib_dir)
     dir_counts(src_dir)
 
-    
